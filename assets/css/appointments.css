@@ -1,36 +1,76 @@
+body {
+  background-color: rgb(9, 11, 39);
+}
+
+.circle1 {
+  background: linear-gradient(blue, green);
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  z-index: 100;
+  margin-left: 15%;
+  margin-top: -8%;
+  border-radius: 200px;
+}
+
+.circle2 {
+  background: linear-gradient(red, yellow);
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  z-index: 100;
+  margin-left: 50%;
+  margin-top: 25%;
+  border-radius: 200px;
+}
+
 .myMonth {
   position: absolute;
-  min-height: 300px;
+  min-height: 550px;
   width: 40%;
-  background-color: rgba(0, 0, 0, 0.459);
-  margin-top: 100px;
-  margin-left: 30%;
-  z-index: 1000;
-  border-radius: 10px;
-  backdrop-filter: blur(25px);
-}
-.myMonth2 {
-  position: absolute;
-  min-height: 250px;
-  width: 40%;
-  background-color: rgba(0, 0, 0, 0.459);
-  margin-top: 450px;
+  background-color: rgba(255, 255, 255, 0.459);
+  margin-top: 10%;
   margin-left: 30%;
   z-index: 1000;
   border-radius: 10px;
   backdrop-filter: blur(25px);
 }
 
-form {
+#date {
+  font-size: 30px;
   margin-top: 20px;
+}
+.grid-container .monthEl {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.arrow {
+  margin-top: 5%;
+}
+.fullDate {
   font-size: 20px;
 }
-input {
-  margin-top: 20px;
-  font-size: 20px;
-  background-color: rgba(0, 0, 0, 0.459);
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.grid-item,
+.fullDate {
   color: white;
 }
-#text {
-  height: 80px;
+
+form {
+  z-index: 1000;
+}
+button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  height: 50px;
+  border-radius: 10px;
+}
+.day:hover {
+  background-color: rgba(0, 0, 0, 0.3);
 }

@@ -1,15 +1,19 @@
-.back {
-  color: rgba(255, 255, 255, 0.842);
+* {
+  overflow: hidden;
+}
+body {
+  background-color: rgb(9, 11, 39);
 }
 
+.back {
+  overflow: hidden;
+}
 .circle1 {
   background: linear-gradient(blue, green);
   height: 400px;
   width: 400px;
   position: absolute;
   z-index: 100;
-  margin-left: 15%;
-  margin-top: -8%;
   border-radius: 200px;
 }
 
@@ -19,8 +23,6 @@
   width: 300px;
   position: absolute;
   z-index: 100;
-  margin-left: 50%;
-  margin-top: 45%;
   border-radius: 200px;
 }
 
@@ -28,7 +30,7 @@
   position: absolute;
   min-height: 550px;
   width: 40%;
-  background-color: rgba(0, 0, 0, 0.459);
+  background-color: rgba(255, 255, 255, 0.459);
   margin-top: 10%;
   margin-left: 30%;
   z-index: 1000;
@@ -55,6 +57,12 @@
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto;
 }
+
+.grid-item,
+.fullDate {
+  color: white;
+}
+
 form {
   z-index: 1000;
 }

@@ -1,0 +1,26 @@
+{
+  "name": "calendar-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jasonpsmith180/calendar-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jasonpsmith180/calendar-app/issues"
+  },
+  "homepage": "https://github.com/Jasonpsmith180/calendar-app#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "inquirer": "^8.0.0",
+    "moment": "^2.29.1",
+    "node": "^16.0.0",
+    "path": "^0.12.7"
+  }
+}

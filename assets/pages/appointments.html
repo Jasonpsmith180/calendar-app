@@ -16,33 +16,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <link rel="stylesheet" href="../css/calendar.css" />
     <link rel="stylesheet" href="../css/appointments.css" />
   </head>
   <body>
     <section class="back">
       <div class="circle1"></div>
       <div class="circle2"></div>
-      <div class="box">
-        <div class="myMonth text-center">
-          <h4>All Appointments For 12/12/1212</h4>
-          <div id="date"></div>
-          <div id="appointments">
-            You currently have no appointments on this day.
-          </div>
-        </div>
-        <div class="container myMonth2 text-center">
-          <h4>New Appointment</h4>
-
-          <form action="/calendar" method="post">
-            <label for="title">Title:</label>
-            <input type="text" name="title" id="title" />
-            <br />
-            <label for="text">Text:</label>
-            <input type="text" name="text" id="text" />
-          </form>
-        </div>
-      </div>
+      <div class="box"></div>
+      <div class="container myMonth"></div>
     </section>
     <script src="../js/appointments.js"></script>
   </body>

@@ -1,15 +1,19 @@
+* {
+  overflow: hidden;
+}
 body {
   background-color: rgb(9, 11, 39);
 }
 
+.back {
+  overflow: hidden;
+}
 .circle1 {
   background: linear-gradient(blue, green);
   height: 400px;
   width: 400px;
   position: absolute;
   z-index: 100;
-  margin-left: 15%;
-  margin-top: -8%;
   border-radius: 200px;
 }
 
@@ -19,8 +23,6 @@ body {
   width: 300px;
   position: absolute;
   z-index: 100;
-  margin-left: 50%;
-  margin-top: 25%;
   border-radius: 200px;
 }
 

@@ -1,9 +1,9 @@
 # calendar-app
 
 # User Story
-AS A busy professional I need a way to manage my workflow from day to day.
-I WANT a calendar app that I can create new tasks, edit tasks and delete finished tasks
-SO THAT I can keep track of my daily tasks
+AS A busy professional I need a way to manage my workflow from day to day  
+I WANT a calendar app that I can create new tasks, edit tasks and delete finished tasks  
+SO THAT I can keep track of my daily tasks  
 
 GIVEN a calendar style app  
 WHEN I visit the site for the first time  

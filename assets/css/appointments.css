@@ -1,0 +1,36 @@
+.myMonth {
+  position: absolute;
+  min-height: 300px;
+  width: 40%;
+  background-color: rgba(0, 0, 0, 0.459);
+  margin-top: 100px;
+  margin-left: 30%;
+  z-index: 1000;
+  border-radius: 10px;
+  backdrop-filter: blur(25px);
+}
+.myMonth2 {
+  position: absolute;
+  min-height: 250px;
+  width: 40%;
+  background-color: rgba(0, 0, 0, 0.459);
+  margin-top: 450px;
+  margin-left: 30%;
+  z-index: 1000;
+  border-radius: 10px;
+  backdrop-filter: blur(25px);
+}
+
+form {
+  margin-top: 20px;
+  font-size: 20px;
+}
+input {
+  margin-top: 20px;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.459);
+  color: white;
+}
+#text {
+  height: 80px;
+}

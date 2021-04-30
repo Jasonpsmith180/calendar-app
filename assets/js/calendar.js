@@ -215,7 +215,7 @@ function setDates(myNum) {
   let thisDayofWeek = Year.Week[date.getDay()];
 
   let fullDate =
-    "Today is: " +
+    "Today's Date: " +
     "<br>" +
     thisDayofWeek +
     " " +
@@ -258,18 +258,43 @@ function setDates(myNum) {
   monthElement.setAttribute("class", "grid-container monthEl");
 
   let fullDateEl = document.createElement("div");
-  fullDateEl.setAttribute("class", "fullDate text-center");
+  fullDateEl.setAttribute("class", "fullDate");
   fullDateEl.innerHTML = fullDate;
 
   monthArrows.appendChild(monthElement);
 
   let lineBreak = document.createElement("br");
 
+  let todayBtn = document.createElement("div");
+  todayBtn.setAttribute("class", "fa fa-home homeButton");
+  todayBtn.setAttribute(
+    "style",
+    " width: 20px; font-size: 20px; color: white; border-radius: 30px"
+  );
+  todayBtn.setAttribute("onClick", "refreshPage()");
+
+  let listBtn = document.createElement("div");
+  listBtn.setAttribute("class", "fa fa-list homeButton");
+  listBtn.setAttribute(
+    "style",
+    "position: absolute; width: 20px; font-size: 20px; color: white;"
+  );
+
+  document.querySelector("#date").appendChild(listBtn); // full date;
+  document.querySelector("#date").appendChild(todayBtn); // full date;
   document.querySelector("#date").appendChild(fullDateEl); // full date;
   document.querySelector("#date").appendChild(lineBreak); // full date;
   document.querySelector("#date").appendChild(monthArrows); //month and arrow boxes
 
-  createDays(date, thisYear, thisDay, thisDayofWeek, plusMinusCounter);
+  createDays(
+    date,
+    thisYear,
+    thisDay,
+    thisDayofWeek,
+    plusMinusCounter,
+    thisMonth,
+    curretMonth
+  );
 }
 
 function createDays(
@@ -277,7 +302,9 @@ function createDays(
   thisYear,
   thisDay,
   thisDayofWeek,
-  plusMinusYearCounter
+  plusMinusYearCounter,
+  thisMonth,
+  curretMonth
 ) {
   console.log("@createDays() in calendar.js");
 
@@ -336,6 +363,11 @@ function createDays(
     day.setAttribute("style", "margin-top: 10px; margin-bottom:10px");
     day.setAttribute("id", newId);
     day.setAttribute("type", "submit");
+
+    if (calNum === thisDay && thisMonth === curretMonth) {
+      day.classList.add("todayDate");
+    }
+
     dayForm.appendChild(idForForm);
     dayForm.appendChild(day);
     calendar.appendChild(dayForm);
@@ -391,3 +423,7 @@ function cicleLocations() {
 }
 
 cicleLocations();
+
+function refreshPage() {
+  window.location.reload();
+}

@@ -50,7 +50,12 @@ body {
   margin-top: 5%;
 }
 .fullDate {
-  font-size: 20px;
+  font-size: 15px;
+  position: absolute;
+  margin-top: -2%;
+  margin-left: 6%;
+  width: 80%;
+  text-align: center;
 }
 
 .grid-container {
@@ -75,4 +80,33 @@ button {
 }
 .day:hover {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.arrow:hover,
+.homeButton:hover {
+  color: rgb(61, 61, 61);
+}
+
+.homeButton {
+  display: flex;
+  float: right;
+  width: 20px;
+  font-size: 20px;
+  height: 20px;
+  color: white;
+  float: left;
+}
+
+.todayDate {
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.todayDate:hover {
+  background-color: white;
+}
+
+.homeToToday {
+  float: right;
+  display: flex;
+  margin-top: -20px;
 }

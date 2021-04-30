@@ -5,10 +5,8 @@ const app = express();
 const Year = require("./assets/js/year.json");
 const port = process.env.PORT || 3000;
 
-console.log("Yo");
 app.use(express.static("assets"));
 app.use(express.static(path.join(__dirname, "assets")));
-console.log(moment().format("dddd"));
 
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "/index.html"));
@@ -24,6 +22,10 @@ app.get("/appointments", function (req, res) {
 
 app.post("/credentials", function (req, res) {
   res.sendFile(path.join(__dirname, "/assets/pages/creds.html"));
+});
+
+app.get("/list", function (req, res) {
+  res.sendFile(path.join(__dirname, "/assets/pages/list.html"));
 });
 ////////////////////////////////
 app.listen(port, function () {

@@ -210,7 +210,8 @@ function setDates(myNum) {
 
   let thisMonth = Year.Months[dislayDateChanger].name;
   let curretMonth = Year.Months[date.getMonth()].name;
-  let thisYear = date.getFullYear();
+  let currentYear = date.getFullYear();
+  let thisYear = date.getFullYear() + plusMinusCounter;
   let thisDay = date.getDate();
   let thisDayofWeek = Year.Week[date.getDay()];
 
@@ -223,7 +224,7 @@ function setDates(myNum) {
     " " +
     thisDay +
     ", " +
-    thisYear;
+    currentYear;
 
   let monthArrows = document.createElement("div");
   monthArrows.setAttribute("id", "arrowsBox");
@@ -243,7 +244,7 @@ function setDates(myNum) {
   arrowBoxRight.setAttribute("onClick", "plusCalDay()");
 
   let monthBoxMiddle = document.createElement("div");
-  monthBoxMiddle.innerHTML = thisMonth + " " + (thisYear + plusMinusCounter);
+  monthBoxMiddle.innerHTML = thisMonth + " " + thisYear;
   monthBoxMiddle.setAttribute("class", "grid-item");
 
   let monthElement = document.createElement("div");
@@ -293,7 +294,8 @@ function setDates(myNum) {
     thisDayofWeek,
     plusMinusCounter,
     thisMonth,
-    curretMonth
+    curretMonth,
+    currentYear
   );
 }
 
@@ -304,7 +306,8 @@ function createDays(
   thisDayofWeek,
   plusMinusYearCounter,
   thisMonth,
-  curretMonth
+  curretMonth,
+  currentYear
 ) {
   console.log("@createDays() in calendar.js");
 
@@ -364,7 +367,11 @@ function createDays(
     day.setAttribute("id", newId);
     day.setAttribute("type", "submit");
 
-    if (calNum === thisDay && thisMonth === curretMonth) {
+    if (
+      calNum === thisDay &&
+      thisMonth === curretMonth &&
+      thisYear === currentYear
+    ) {
       day.classList.add("todayDate");
     }
 

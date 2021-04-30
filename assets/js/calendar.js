@@ -186,6 +186,7 @@ const Year = {
 let todaysDate = new Date();
 
 let dislayDateChanger = todaysDate.getMonth();
+let plusMinusCounter = 0;
 console.log(dislayDateChanger);
 let myNum = dislayDateChanger;
 
@@ -194,6 +195,17 @@ function setDates(myNum) {
   document.querySelector("#date").innerHTML = "";
   document.querySelector("#days").innerHTML = "";
   // Sets the Dates and adds them to the calendar
+
+  if (dislayDateChanger < 0) {
+    dislayDateChanger = 11;
+    --plusMinusCounter;
+  }
+  if (dislayDateChanger > 11) {
+    dislayDateChanger = 0;
+    ++plusMinusCounter;
+    console.log("Inside");
+  }
+  console.log("TEST: ", dislayDateChanger);
   let date = new Date();
 
   let thisMonth = Year.Months[dislayDateChanger].name;
@@ -231,7 +243,7 @@ function setDates(myNum) {
   arrowBoxRight.setAttribute("onClick", "plusCalDay()");
 
   let monthBoxMiddle = document.createElement("div");
-  monthBoxMiddle.innerHTML = thisMonth;
+  monthBoxMiddle.innerHTML = thisMonth + " " + (thisYear + plusMinusCounter);
   monthBoxMiddle.setAttribute("class", "grid-item");
 
   let monthElement = document.createElement("div");
@@ -257,17 +269,30 @@ function setDates(myNum) {
   document.querySelector("#date").appendChild(lineBreak); // full date;
   document.querySelector("#date").appendChild(monthArrows); //month and arrow boxes
 
-  createDays(date, thisYear, thisDay, thisDayofWeek);
+  createDays(date, thisYear, thisDay, thisDayofWeek, plusMinusCounter);
 }
 
-function createDays(date, thisYear, thisDay, thisDayofWeek) {
+function createDays(
+  date,
+  thisYear,
+  thisDay,
+  thisDayofWeek,
+  plusMinusYearCounter
+) {
   console.log("@createDays() in calendar.js");
 
   let weekAbrv = Year.WeekAbrv;
 
   // Gets First Day of the Month
-  let firstDayLongV = new Date(date.getFullYear(), dislayDateChanger, 1, 0);
+  let firstDayLongV = new Date(
+    date.getFullYear() + plusMinusYearCounter,
+    dislayDateChanger,
+    1,
+    0
+  );
   let firstDay = firstDayLongV.toString();
+
+  console.log("FIRSTDAY: ", firstDay);
 
   for (let k = 0; k < weekAbrv.length; k++) {
     if (firstDay.includes(weekAbrv[k])) {

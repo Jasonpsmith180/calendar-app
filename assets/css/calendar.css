@@ -78,8 +78,7 @@ button {
   height: 50px;
   border-radius: 10px;
 }
-.day:hover,
-.homeButton:hover {
+.day:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -91,6 +90,11 @@ button {
 .homeButton {
   display: flex;
   float: right;
+  width: 20px;
+  font-size: 20px;
+  height: 20px;
+  color: white;
+  float: left;
 }
 
 .todayDate {
@@ -99,4 +103,10 @@ button {
 }
 .todayDate:hover {
   background-color: white;
+}
+
+.homeToToday {
+  float: right;
+  display: flex;
+  margin-top: -20px;
 }

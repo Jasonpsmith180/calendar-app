@@ -267,21 +267,24 @@ function setDates(myNum) {
   let lineBreak = document.createElement("br");
 
   let todayBtn = document.createElement("div");
-  todayBtn.setAttribute("class", "fa fa-home homeButton");
-  todayBtn.setAttribute(
-    "style",
-    " width: 20px; font-size: 20px; color: white; border-radius: 30px"
-  );
+  todayBtn.setAttribute("class", "fa fa-home homeButton homeToToday");
+
   todayBtn.setAttribute("onClick", "refreshPage()");
 
-  let listBtn = document.createElement("div");
-  listBtn.setAttribute("class", "fa fa-list homeButton");
-  listBtn.setAttribute(
-    "style",
-    "position: absolute; width: 20px; font-size: 20px; color: white;"
-  );
+  let fullListEl = document.createElement("form");
+  fullListEl.setAttribute("method", "get");
+  fullListEl.setAttribute("action", "/list");
 
-  document.querySelector("#date").appendChild(listBtn); // full date;
+  let listBtn = document.createElement("button");
+  listBtn.setAttribute("class", "fa fa-list homeButton");
+
+  listBtn.setAttribute("type", "submit");
+  listBtn.setAttribute("name", "list");
+  listBtn.setAttribute("value", "list");
+
+  fullListEl.appendChild(listBtn);
+
+  document.querySelector("#date").appendChild(fullListEl); // full date;
   document.querySelector("#date").appendChild(todayBtn); // full date;
   document.querySelector("#date").appendChild(fullDateEl); // full date;
   document.querySelector("#date").appendChild(lineBreak); // full date;

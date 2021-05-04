@@ -1,0 +1,112 @@
+* {
+  overflow: hidden;
+}
+body {
+  background-color: rgb(9, 11, 39);
+}
+
+.back {
+  overflow: hidden;
+}
+.circle1 {
+  background: linear-gradient(blue, green);
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  z-index: 100;
+  border-radius: 200px;
+}
+
+.circle2 {
+  background: linear-gradient(red, yellow);
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  z-index: 100;
+  border-radius: 200px;
+}
+
+.myMonth {
+  position: absolute;
+  min-height: 550px;
+  width: 40%;
+  background-color: rgba(255, 255, 255, 0.459);
+  margin-top: 10%;
+  margin-left: 30%;
+  z-index: 1000;
+  border-radius: 10px;
+  backdrop-filter: blur(25px);
+}
+
+#date {
+  font-size: 30px;
+  margin-top: 20px;
+}
+.grid-container .monthEl {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.arrow {
+  margin-top: 5%;
+}
+.fullDate {
+  font-size: 15px;
+  position: absolute;
+  margin-top: -2%;
+  margin-left: 6%;
+  width: 80%;
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.grid-item,
+.fullDate {
+  color: white;
+}
+
+form {
+  z-index: 1000;
+}
+button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  height: 50px;
+  border-radius: 10px;
+}
+.day:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.arrow:hover,
+.homeButton:hover {
+  color: rgb(61, 61, 61);
+}
+
+.homeButton {
+  display: flex;
+  float: right;
+  width: 20px;
+  font-size: 20px;
+  height: 20px;
+  color: white;
+  float: left;
+}
+
+.todayDate {
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.todayDate:hover {
+  background-color: white;
+}
+
+.homeToToday {
+  float: right;
+  display: flex;
+  margin-top: -20px;
+}

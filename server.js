@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, "assets")));
 app.use(routes);
 
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "/index.html"));
+    res.render("main.handlebars");
   });
   
   app.post("/calendar", function (req, res) {
